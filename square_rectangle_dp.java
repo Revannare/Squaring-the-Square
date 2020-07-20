@@ -146,8 +146,6 @@ public class square_rectangle_dp {
             printSubsetsRec(arr, i-1, sum, b, lenth, width);
         }
 
-        // If given sum can be achieved after considering
-        // current element.
         if (sum >= arr[i] && dpTable[i-1][sum-arr[i]])
         {
             p.add(arr[i]);
@@ -167,7 +165,6 @@ public class square_rectangle_dp {
             dpTable[i][0] = true;
         }
 
-        // Sum arr[0] can be achieved with single element
         if (arr[0] <= sum)
             dpTable[0][arr[0]] = true;
 
@@ -184,8 +181,7 @@ public class square_rectangle_dp {
             return;
         }
 
-        // Now recursively traverse dp[][] to find all
-        // paths from dp[n-1][sum]
+        
         ArrayList<Integer> p = new ArrayList<>();
         printSubsetsRec(arr, n-1, sum, p, lenth, width);
     }
@@ -193,20 +189,6 @@ public class square_rectangle_dp {
     // main
     public static void main(String[] args) {
 
-//        int p = 33;
-//        int kk = 32;
-////        int num[] = {1,4,7,8,9,10,14,15,18};
-//        int num[] = {0,3,6,7,8,9,13,14,17};
-//        int arrayN[] = new int[kk];
-//        for (int i = 0; i < kk; i++) {
-//            arrayN[i] = 0;
-//        }
-//        for (int i = 0; i < num.length; i++) {
-//            arrayN[num[i]] = 1;
-//        }
-//        System.out.println(flow_check(arrayN, 33, 32));
-
-        // define the length and input from users
         int lenth = 0;
         int width = 0;
         Scanner input=new Scanner(System.in);
@@ -231,63 +213,3 @@ public class square_rectangle_dp {
         int sum = width * lenth;
 
         printAllSubsets(arr, n, sum, lenth, width);
-
-//        int endLabel = 0;
-//        int temp = 0;
-//        int target = width*lenth;
-//        while (temp <= target) {
-//            temp = temp + (endLabel + 1) * (endLabel + 1);
-//            endLabel++;
-//        }
-//
-//        for (int i = width - 2; i >= endLabel; i--)
-//        {
-//            int[] tempMask = new int[width];
-//            for (int k = 0; k < width; k++)
-//            {
-//                tempMask[k] = 0;
-//            }
-//            tempMask[i] = 1;
-//
-//            int endIndex = lenth - i - 1;
-//
-//            while (tempMask[endIndex] != 1) {
-//                tempMask[0] ++;
-//                for (int j = 0; j < i; j++) {
-//                    if (tempMask[j] == 2){
-//                        tempMask[j] = 0;
-//                        tempMask[j+1]++;
-//                    }
-////                    else if (tempMask[j] == 1 || tempMask[j] == 0) {
-////                        break;
-////                    }
-//                }
-//                //check
-//                int count = 0;
-//                for (int k = 0; k < width; k++)
-//                {
-//                    if(tempMask[k] == 1)
-//                        count += (k+1)*(k+1);
-//                }
-//                int tempResult = count - target;
-//                if (tempResult==0){
-//                    if(flow_check(tempMask, lenth, width)){
-//                        return;
-//                }
-////                    results.put(tempMask.clone(), 1);
-//                }
-//                else if(tempResult>0){
-//                    break;
-//                }
-//            }
-//        }
-////        System.out.println(results.size());
-////
-////        Set<int[]> masks = results.keySet();
-////        for (int[] mask : masks) {
-////            if(flow_check(mask, lenth, width)){
-////                return;
-////            }
-////        }
-    }
-}
