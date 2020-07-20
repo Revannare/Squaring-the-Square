@@ -213,3 +213,5 @@ public class square_rectangle_dp {
         int sum = width * lenth;
 
         printAllSubsets(arr, n, sum, lenth, width);
+    }
+}
