@@ -4,16 +4,7 @@ import com.google.common.primitives.Ints;
 import java.util.*;
 import java.util.concurrent.ConcurrentLinkedQueue;
 
-/**
- * Package: PACKAGE_NAME
- * Comments:
- * Author: lwx
- * Create Date: 2020/6/27
- * Modified Date: 2020/6/27
- * Why & What is modified:
- * Version: 0.0.1beta
- * It's the only NEET thing to do. – Shionji Yuuko
- */
+
 public class square_rectangle_dp {
     static HashMap<int[], Integer> results = new HashMap<>();
     static ConcurrentLinkedQueue<int[]> tempBuffer = new ConcurrentLinkedQueue<>();
